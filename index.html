@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <!-- undefined 와 null 의 차이 -->
+	<!-- <script>
+		var num;		// 초기화하지 않았으므로 undefined 값을 반환함.
+		var str = null;	// object 타입의 null 값
+		
+		// 정의되지 않은 변수에 접근하면 undefined 값을 반환함.
+		document.getElementById("result").innerHTML = 
+			(typeof num) + "<br>" + (typeof str) + "<br>" + (typeof secondNum);
+	</script> -->
+	
+    <!-- 타입 변환 -->
+    <!-- <script>
+		var num = 20;	// 변수의 선언과 함께 초기화
+		document.getElementById("result").innerHTML = num + "<br>";
+		num = "이십";	// 문자열 대입
+		document.getElementById("result").innerHTML += num + "<br>";
+		var num;		// 한 변수를 여러 번 초기화할 수는 있으나, 재선언은 할 수 없음
+		document.getElementById("result").innerHTML += num; -->
+    </script>
+    <!-- 묵시적 타입 변환 -->
+    <script>
+		var result = 10 + "문자열";	// 문자열 연결을 위해 숫자 10이 문자열로 변환됨.
+		document.getElementById("result").innerHTML = result + "<br>";
+		result = "3" * "5";			// 곱셈 연산을 위해 두 문자열이 모두 숫자로 변환됨.
+		document.getElementById("result").innerHTML += result + "<br>";
+		result = 1 - "문자열";		// NaN
+		document.getElementById("result").innerHTML += result;
+	</script>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</html>
