@@ -28,14 +28,26 @@
 		var num;		// 한 변수를 여러 번 초기화할 수는 있으나, 재선언은 할 수 없음
 		document.getElementById("result").innerHTML += num; -->
     </script>
+
     <!-- 묵시적 타입 변환 -->
-    <script>
+    <!-- <script>
 		var result = 10 + "문자열";	// 문자열 연결을 위해 숫자 10이 문자열로 변환됨.
 		document.getElementById("result").innerHTML = result + "<br>";
 		result = "3" * "5";			// 곱셈 연산을 위해 두 문자열이 모두 숫자로 변환됨.
 		document.getElementById("result").innerHTML += result + "<br>";
 		result = 1 - "문자열";		// NaN
 		document.getElementById("result").innerHTML += result;
+	</script> -->
+
+    <!-- 명시적 타입 변환 (필요함) -->
+	<script>
+		document.getElementById("result").innerHTML = Number("10") + "<br>";	// 10
+		document.getElementById("result").innerHTML += String(true) + "<br>";	// "true"
+		document.getElementById("result").innerHTML += Boolean(0) + "<br>";		// false  0은 false 1은 true
+		document.getElementById("result").innerHTML += Object(3);				// new Number(3)
+
+        console.log(typeof String(true)) // "문자열 true"
+        console.log(typeof false.toString()) // "문자열 false"
 	</script>
 
 </body>

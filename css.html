@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 동위 선택자 */
+	    /* div{ border: 3px solid #F08080; }
+		div ~ p { background-color: #FFE4E1; } */
+
+        /* 인접 동위 선택자 */
+        div{ border: 3px solid #F08080; }
+		div + p { background-color: #FFE4E1; }
+
+        /* checked로 다음 태그 css 먹이기 */
+        span { margin-left: 5px; }
+		input { color: #FFEFD5; }
+		input:checked + span { color: #CD853F; }
+
+        /* 속성=속성값 선택자를 이용한 선택 */
+        p[title="first h2"] {
+			background: black;
+			color: yellow;
+		}
+        /* not 선택자 활용 */
+        span { margin-left: 5px; }
+		input { color: #FFEFD5; }
+		input:not([type="password"]) { background-color: #CD853F; }
+    </style>
+</head>
+<body>
+    <!-- 
+        동위선택자
+        div ~ p // div 뒤에 있는 p태그 2개만 잡음
+     -->
+    <!-- <h1>일반 동위 선택자를 이용한 선택</h1>
+	<p>이 p 태그는 div 태그의 sibling 이지만 div 태그보다 앞에 나옵니다!</p>
+	<div>
+		<p>이 p 태그는 div 태그의 child 입니다!</p>
+		<p>이 p 태그는 div 태그의 child 입니다!</p>
+		<p>이 p 태그는 div 태그의 child 입니다!</p>
+	</div>
+	<p>이 p 태그는 div 태그의 sibling 입니다!</p>
+	<p>이 p 태그는 div 태그의 sibling 입니다!</p> -->
+
+    <!-- 
+        인접동위 선택자
+        div + p / div 바로 뒤에 있는 p태그 하나만 잡음
+     -->
+	<!-- <h1>인접 동위 선택자를 이용한 선택</h1>
+	<div>
+		<p>이 p 태그는 div 태그의 sibling 입니다!</p>
+		<div>
+			<p>이 p 태그는 div 태그의 child 입니다!</p>
+		</div>
+		<p>이 p 태그는 div 태그 바로 뒤에 나오는 sibling 입니다!</p>
+		<p>이 p 태그는 div 태그의 sibling 입니다!</p>
+	</div>
+	<p>이 p 태그는 div 태그 바로 뒤에 나오는 sibling 입니다!</p>
+	<p>이 p 태그는 div 태그의 sibling 입니다!</p> -->
+
+    <!-- 
+        checked 로 표기한 다음 꺼 css 먹이기
+     -->
+    <h1>input 요소의 스타일 설정</h1>
+	<form>
+		<input type="checkbox" name="lecture" value="html" checked="checked"><span>HTML</span><br>
+		<input type="checkbox" name="lecture" value="css"><span>CSS</span><br>
+		<input type="checkbox" name="lecture" value="java"><span>JAVA</span><br>
+		<input type="checkbox" name="lecture" value="cpp"><span>C++</span>
+	</form>
+
+    <!-- 
+        속성=속성값 선택자를 이용한 선택
+     -->
+	<h1>[속성="속성값"] 선택자를 이용한 선택</h1>
+	<h2 title="first h2">이 제목은 title 속성값이 "first h2"입니다!</h2>
+	<h3>이 제목은 title 속성을 가지고 있지 않습니다!</h3>
+	<p title="first p">이 단락은 title 속성값이 "first p"입니다!</p>
+	<p title="second p">이 단락은 title 속성값이 "second p"입니다!</p>
+
+    <!-- 
+        not 선택자
+     -->
+     	<h1>:not을 이용한 선택</h1>
+	<form>
+		사용자 : <br>
+		<input type="text" name="username"><br>
+		비밀번호 : <br>
+		<input type="password" name="password"><br>
+		주소 : <br>
+		<input type="text" name="address">
+	</form>
+</body>
+</html>
